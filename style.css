@@ -1,26 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar .brand {
+  font-size: 1.5em;
+  color: #007aff;
+  font-weight: bold;
+}
+
+.navbar .nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #007aff;
+  font-size: 0.95em;
 }
 
 .container {
-  width: 80%;
   max-width: 1000px;
-  margin: 50px auto;
-  background: white;
-  padding: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-h1 {
+.hero {
   text-align: center;
   margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.primary-button {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.95em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #005edc;
+}
+
+.card {
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.card h2 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 canvas {
   width: 100% !important;
   height: 400px !important;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85em;
+  color: #aaa;
 }

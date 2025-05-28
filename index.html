@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>실시간 데이터 대시보드</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sun gl!tter | 실시간 센서 대시보드</title>
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>📈 실시간 데이터 대시보드</h1>
-    <canvas id="realtimeChart"></canvas>
-  </div>
+  <nav class="navbar">
+    <div class="brand">sun gl!tter</div>
+    <div class="nav-links">
+      <a href="#">shop</a>
+      <a href="#">about</a>
+      <a href="#">archive</a>
+      <a href="#">login</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h1>📈 실시간 센서 대시보드</h1>
+      <p>우리의 작은 움직임을 감성적으로 시각화해요.</p>
+      <button class="primary-button">데이터 보기</button>
+    </section>
+
+    <section class="card">
+      <h2>📡 센서 데이터 그래프</h2>
+      <canvas id="realtimeChart"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 sun gl!tter dashboard</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
