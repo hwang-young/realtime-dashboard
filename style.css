@@ -1,35 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Nanum Gothic', sans-serif;
-  background-color: #fdfdfd;
-  color: #222;
+  font-family: 'Pretendard', sans-serif;
+  background: linear-gradient(135deg, #f8fbff, #e3efff);
+  color: #333;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.5);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #ddd;
+  z-index: 10;
 }
 
 .navbar .brand {
-  font-size: 1.5em;
-  color: #007aff;
+  font-size: 1.6em;
   font-weight: bold;
+  color: #007aff;
 }
 
 .navbar .nav-links a {
   margin-left: 20px;
   text-decoration: none;
   color: #007aff;
-  font-size: 0.95em;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.navbar .nav-links a:hover {
+  color: #0057cc;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -40,51 +48,43 @@ body {
 }
 
 .hero h1 {
-  font-size: 2em;
+  font-size: 2.3em;
   margin-bottom: 10px;
 }
 
 .hero p {
   font-size: 1em;
-  color: #666;
-  margin-bottom: 20px;
+  color: #555;
+  margin-bottom: 25px;
 }
 
 .primary-button {
-  background-color: #007aff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
+  background-color: transparent;
+  color: #007aff;
+  border: 2px solid #007aff;
+  padding: 10px 24px;
   font-size: 0.95em;
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
-
 .primary-button:hover {
-  background-color: #005edc;
+  background-color: #007aff;
+  color: white;
 }
 
 .card {
-  background: #f9f9f9;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(8px);
 }
 
 .card h2 {
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-bottom: 20px;
 }
 
 canvas {
-  width: 100% !important;
-  height: 400px !important;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.85em;
-  color: #aaa;
-}
+  w
