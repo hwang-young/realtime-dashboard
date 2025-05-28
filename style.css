@@ -3,8 +3,16 @@
 body {
   margin: 0;
   font-family: 'Pretendard', sans-serif;
-  background: linear-gradient(135deg, #f8fbff, #e3efff);
+  background: linear-gradient(270deg, #e0e7ff, #fce7f3, #e0f2fe);
+  background-size: 600% 600%;
+  animation: gradientFlow 20s ease infinite;
   color: #333;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .top-title {
@@ -54,8 +62,12 @@ body {
   backdrop-filter: blur(8px);
 }
 
-.card h2 {
-  font-size: 1.3em;
+.graph-title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #9b59b6; /* 💜 보라색 */
+  font-family: 'Pretendard', sans-serif;
   margin-bottom: 20px;
 }
 
@@ -64,7 +76,6 @@ canvas {
   height: 400px !important;
 }
 
-/* 🔴 우측 하단 오류창 */
 .error-toast {
   position: fixed;
   bottom: 20px;
@@ -90,11 +101,4 @@ canvas {
   cursor: pointer;
   line-height: 1;
   padding: 0;
-}
-
-footer {
-  text-align: center;
-  padding: 30px 10px;
-  font-size: 0.9em;
-  color: #999;
 }
