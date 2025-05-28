@@ -3,32 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>실시간 센서 대시보드</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>3D 프린터 대시보드</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #007aff;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .printer-frame {
+      position: relative;
+      width: 700px;
+      max-width: 95%;
+    }
+
+    .printer-img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .printer-canvas {
+      position: absolute;
+      top: 125px;   /* 조정 가능 */
+      left: 140px;  /* 조정 가능 */
+      width: 420px;
+      height: 230px;
+      z-index: 2;
+      background: transparent;
+    }
+
+    .button {
+      margin-top: 30px;
+      background-color: #6c4eb6;
+      color: white;
+      padding: 12px 28px;
+      font-size: 1em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #4c2fa6;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="top-title">
-    <h1>실시간 센서 대시보드</h1>
+  <h1>실시간 센서 대시보드</h1>
+
+  <div class="printer-frame">
+    <img src="printer-frame.png" alt="3D 프린터" class="printer-img">
+    <canvas id="realtimeChart" class="printer-canvas"></canvas>
   </div>
 
-  <main class="container">
-    <section class="hero">
-      <button class="primary-button">데이터 보기</button>
-    </section>
+  <button class="button">대시보드 보기</button>
 
-    <section class="card">
-      <h2 class="graph-title">센서 데이터 그래프</h2>
-      <canvas id="realtimeChart"></canvas>
-    </section>
-  </main>
+  <script>
+    const ctx = document.getElementById('realtimeChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [],
+        datasets: [{
+          label: '센서 데이터',
+          data: [],
+          borderColor: '#8e44ad',
+          backgroundColor: 'rgba(142, 68, 173, 0.1)',
+          borderWidth: 2,
+          tension: 0.4,
+          pointRadius: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: false,
+        scales: {
+          x: { title: { display: false }, ticks: { display: false } },
+          y: { title: { display: false }, ticks: { display: false }, beginAtZero: true }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
 
-  <div class="error-toast" id="errorToast">
-    <span>오류 발생 확인 필요</span>
-    <button class="close-btn" onclick="document.getElementById('errorToast').style.display='none';">×</button>
-  </div>
+    setInterval(() => {
+      const now = new Date().toLocaleTimeString().slice(3);
+      const value = Math.random() * 10 + 20;
 
-  <script src="script.js"></script>
+      chart.data.labels.push(now);
+      chart.data.datasets[0].data.push(value);
+
+      if (chart.data.labels.length > 10) {
+        chart.data.labels.shift();
+        chart.data.datasets[0].data.shift();
+      }
+
+      chart.update();
+    }, 1000);
+  </script>
 </body>
 </html>
