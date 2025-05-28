@@ -20,11 +20,6 @@ body {
   font-family: 'Pretendard', sans-serif;
 }
 
-/* 숨겨진 navbar (삭제해도 무방하지만 혹시 몰라 남겨둠) */
-.navbar {
-  display: none;
-}
-
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -34,12 +29,6 @@ body {
 .hero {
   text-align: center;
   margin-bottom: 40px;
-}
-
-.hero p {
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 25px;
 }
 
 .primary-button {
@@ -73,6 +62,34 @@ body {
 canvas {
   width: 100% !important;
   height: 400px !important;
+}
+
+/* 🔴 우측 하단 오류창 */
+.error-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff4d4f;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.error-toast .close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
 }
 
 footer {
