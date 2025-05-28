@@ -1,104 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@600&display=swap');
 
 body {
   margin: 0;
   font-family: 'Pretendard', sans-serif;
-  background: linear-gradient(270deg, #e0e7ff, #fce7f3, #e0f2fe);
-  background-size: 600% 600%;
-  animation: gradientFlow 20s ease infinite;
-  color: #333;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.top-title {
-  text-align: center;
-  padding: 40px 0 20px;
-}
-
-.top-title h1 {
-  font-size: 2.5em;
+h1 {
+  font-size: 2.2em;
   color: #007aff;
-  font-weight: 700;
-  margin: 0;
-  font-family: 'Pretendard', sans-serif;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px 40px;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.primary-button {
-  background-color: transparent;
-  color: #007aff;
-  border: 2px solid #007aff;
-  padding: 10px 24px;
-  font-size: 0.95em;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.primary-button:hover {
-  background-color: #007aff;
-  color: white;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-  backdrop-filter: blur(8px);
-}
-
-.graph-title {
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #9b59b6; /* 💜 보라색 */
-  font-family: 'Pretendard', sans-serif;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
-canvas {
-  width: 100% !important;
-  height: 400px !important;
+.printer-frame {
+  position: relative;
+  width: 700px;
+  max-width: 95%;
 }
 
-.error-toast {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #ff4d4f;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 0.85em;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.printer-img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
 }
 
-.error-toast .close-btn {
+.printer-canvas {
+  position: absolute;
+  top: 120px;       /* ✅ 프린터 내부 위치 정확히 맞춤 */
+  left: 138px;
+  width: 426px;
+  height: 235px;
+  z-index: 2;
   background: transparent;
-  border: none;
+  pointer-events: none;  /* 클릭 방지용 */
+}
+
+.button {
+  margin-top: 30px;
+  background-color: #6c4eb6;
   color: white;
-  font-size: 1.2em;
-  font-weight: bold;
+  padding: 12px 28px;
+  font-size: 1em;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  line-height: 1;
-  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: #4c2fa6;
 }
