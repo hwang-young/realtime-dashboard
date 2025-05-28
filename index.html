@@ -3,72 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D 프린터 대시보드</title>
+  <title>3D 프린터 스타일 대시보드</title>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Pretendard', sans-serif;
-      background-color: #f9f9f9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: 2.2em;
-      color: #007aff;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-
-    .printer-frame {
-      position: relative;
-      width: 700px;
-      max-width: 95%;
-    }
-
-    .printer-img {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
-    }
-
-    .printer-canvas {
-      position: absolute;
-      top: 125px;   /* 조정 가능 */
-      left: 140px;  /* 조정 가능 */
-      width: 420px;
-      height: 230px;
-      z-index: 2;
-      background: transparent;
-    }
-
-    .button {
-      margin-top: 30px;
-      background-color: #6c4eb6;
-      color: white;
-      padding: 12px 28px;
-      font-size: 1em;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #4c2fa6;
-    }
-  </style>
 </head>
 <body>
 
   <h1>실시간 센서 대시보드</h1>
 
-  <div class="printer-frame">
-    <img src="printer-frame.png" alt="3D 프린터" class="printer-img">
-    <canvas id="realtimeChart" class="printer-canvas"></canvas>
+  <div class="printer-box">
+    <div class="printer-inner">
+      <canvas id="realtimeChart"></canvas>
+    </div>
+    <div class="printer-footer">MakerBot Replicator 2</div>
   </div>
 
   <button class="button">대시보드 보기</button>
